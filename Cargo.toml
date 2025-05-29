@@ -5,3 +5,4 @@ edition = "2024"
 rust-version = "1.86"
 
 [dependencies]
+dotenvy = { version = "0.15.7" }
