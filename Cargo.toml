@@ -6,3 +6,6 @@ rust-version = "1.86"
 
 [dependencies]
 dotenvy = { version = "0.15.7" }
+
+[dev-dependencies]
+async-std = { version = "1.13.1" }
