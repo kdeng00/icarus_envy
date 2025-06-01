@@ -1,7 +1,7 @@
 
 pub async fn get_db_url() -> String {
     dotenvy::dotenv().ok();
-    std::env::var(crate::keys::DBURL).expect(crate::keys::error::ERROR)
+    std::env::var(crate::keys::DB_URL).expect(crate::keys::error::DB_URL)
 }
 
 pub async fn get_secret_main_key() -> String {
