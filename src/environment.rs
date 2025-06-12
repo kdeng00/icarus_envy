@@ -18,3 +18,8 @@ pub async fn get_root_directory() -> String {
     dotenvy::dotenv().ok();
     std::env::var(crate::keys::ROOT_DIRECTORY).expect(crate::keys::error::ROOT_DIRECTORY)
 }
+
+pub async fn get_icarus_base_api_url() -> String {
+    dotenvy::dotenv().ok();
+    std::env::var(crate::keys::ICARUS_BASE_API_URL).expect(crate::keys::error::ICARUS_BASE_API_URL)
+}
