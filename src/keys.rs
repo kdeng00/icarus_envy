@@ -3,7 +3,7 @@ pub const DB_URL: &str = "DATABASE_URL";
 
 // Environment key for secret main key
 // Used for the icarus app
-pub const SECRET_MAIN_KEY: &str = "SECRET_MAIN_KEY"; 
+pub const SECRET_MAIN_KEY: &str = "SECRET_MAIN_KEY";
 
 // Environment key for secret key
 // Generic use of secret key that could be found in various apps

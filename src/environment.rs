@@ -1,4 +1,3 @@
-
 pub async fn get_db_url() -> String {
     dotenvy::dotenv().ok();
     std::env::var(crate::keys::DB_URL).expect(crate::keys::error::DB_URL)
