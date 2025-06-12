@@ -16,9 +16,12 @@ pub const ROOT_DIRECTORY: &str = "ROOT_DIRECTORY";
 pub const ICARUS_BASE_API_URL: &str = "ICARUS_BASE_API_URL";
 
 pub mod error {
-    pub const DB_URL: &str = "DATABASE_URL must be set in .env";
-    pub const SECRET_KEY: &str = "SECRET_KEY must be set in environment file";
-    pub const SECRET_MAIN_KEY: &str = "SECRET_MAIN_KEY must not be set in environment file";
-    pub const ROOT_DIRECTORY: &str = "ROOT_DIRECTORY must not be set in environment file";
-    pub const ICARUS_BASE_API_URL: &str = "ICARUS_BASE_API_URL must not be set in enviornment file";
+    use const_format::concatcp;
+
+    pub const GENERAL_ERROR: &str = "must not be set in enviornment file";
+    pub const DB_URL: &str = concatcp!(super::DB_URL, " ", GENERAL_ERROR);
+    pub const SECRET_KEY: &str = concatcp!(super::SECRET_KEY, " ", GENERAL_ERROR);
+    pub const SECRET_MAIN_KEY: &str = concatcp!(super::SECRET_MAIN_KEY, " ", GENERAL_ERROR);
+    pub const ROOT_DIRECTORY: &str = concatcp!(super::ROOT_DIRECTORY, " ", GENERAL_ERROR);
+    pub const ICARUS_BASE_API_URL: &str = concatcp!(super::ICARUS_BASE_API_URL, " ", GENERAL_ERROR);
 }
