@@ -21,6 +21,16 @@ mod tests {
     }
 
     #[test]
+    fn test_get_service_passphrase() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_service_passphrase());
+        assert_eq!(
+            result, "T5OCHDHadAtuOWIqRAS7u8XHDDkzKT1Uvvw7mGMkNzKjVdlHA8xGdILf2adDHspO",
+            "SERVICE_PASSPHRASE does not match {:?}",
+            result
+        )
+    }
+
+    #[test]
     fn test_get_secret_key() {
         let result = async_std::task::block_on(icarus_envy::environment::get_secret_key());
         assert_eq!(
