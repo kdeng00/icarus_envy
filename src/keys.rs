@@ -31,5 +31,6 @@ pub mod error {
     pub const SECRET_KEY: &str = concatcp!(super::SECRET_KEY, " ", GENERAL_ERROR);
     pub const ROOT_DIRECTORY: &str = concatcp!(super::ROOT_DIRECTORY, " ", GENERAL_ERROR);
     pub const ICARUS_BASE_API_URL: &str = concatcp!(super::ICARUS_BASE_API_URL, " ", GENERAL_ERROR);
-    pub const ICARUS_AUTH_BASE_API_URL: &str = concatcp!(super::ICARUS_AUTH_BASE_API_URL, " ", GENERAL_ERROR);
+    pub const ICARUS_AUTH_BASE_API_URL: &str =
+        concatcp!(super::ICARUS_AUTH_BASE_API_URL, " ", GENERAL_ERROR);
 }

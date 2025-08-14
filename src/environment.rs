@@ -30,5 +30,6 @@ pub async fn get_icarus_base_api_url() -> String {
 
 pub async fn get_icarus_auth_base_api_url() -> String {
     dotenvy::dotenv().ok();
-    std::env::var(crate::keys::ICARUS_AUTH_BASE_API_URL).expect(crate::keys::error::ICARUS_AUTH_BASE_API_URL)
+    std::env::var(crate::keys::ICARUS_AUTH_BASE_API_URL)
+        .expect(crate::keys::error::ICARUS_AUTH_BASE_API_URL)
 }
