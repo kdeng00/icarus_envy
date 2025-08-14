@@ -18,6 +18,9 @@ pub const ROOT_DIRECTORY: &str = "ROOT_DIRECTORY";
 // Environment key for icarus api url
 pub const ICARUS_BASE_API_URL: &str = "ICARUS_BASE_API_URL";
 
+// Environment key for icarus auth api url
+pub const ICARUS_AUTH_BASE_API_URL: &str = "ICARUS_AUTH_BASE_API_URL";
+
 pub mod error {
     use const_format::concatcp;
 
@@ -28,4 +31,6 @@ pub mod error {
     pub const SECRET_KEY: &str = concatcp!(super::SECRET_KEY, " ", GENERAL_ERROR);
     pub const ROOT_DIRECTORY: &str = concatcp!(super::ROOT_DIRECTORY, " ", GENERAL_ERROR);
     pub const ICARUS_BASE_API_URL: &str = concatcp!(super::ICARUS_BASE_API_URL, " ", GENERAL_ERROR);
+    pub const ICARUS_AUTH_BASE_API_URL: &str =
+        concatcp!(super::ICARUS_AUTH_BASE_API_URL, " ", GENERAL_ERROR);
 }
