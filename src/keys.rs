@@ -44,9 +44,9 @@ pub mod error {
     pub const ICARUS_BASE_API_URL: &str = concatcp!(super::ICARUS_BASE_API_URL, " ", GENERAL_ERROR);
     pub const ICARUS_AUTH_BASE_API_URL: &str =
         concatcp!(super::ICARUS_AUTH_BASE_API_URL, " ", GENERAL_ERROR);
-pub const APP_ENV: &str = concatcp!(super::APP_ENV, " ", GENERAL_ERROR);
-pub const BACKEND_PORT: &str = concatcp!(super::BACKEND_PORT, " ", GENERAL_ERROR);
-pub const FRONTEND_URL: &str = concatcp!(super::FRONTEND_URL, " ", GENERAL_ERROR);
-pub const RUST_LOG: &str = concatcp!(super::RUST_LOG, " ", GENERAL_ERROR);
-pub const ALLOWED_ORIGINS: &str = concatcp!(super::ALLOWED_ORIGINS, " ", GENERAL_ERROR);
+    pub const APP_ENV: &str = concatcp!(super::APP_ENV, " ", GENERAL_ERROR);
+    pub const BACKEND_PORT: &str = concatcp!(super::BACKEND_PORT, " ", GENERAL_ERROR);
+    pub const FRONTEND_URL: &str = concatcp!(super::FRONTEND_URL, " ", GENERAL_ERROR);
+    pub const RUST_LOG: &str = concatcp!(super::RUST_LOG, " ", GENERAL_ERROR);
+    pub const ALLOWED_ORIGINS: &str = concatcp!(super::ALLOWED_ORIGINS, " ", GENERAL_ERROR);
 }
