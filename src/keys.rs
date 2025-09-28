@@ -21,6 +21,17 @@ pub const ICARUS_BASE_API_URL: &str = "ICARUS_BASE_API_URL";
 // Environment key for icarus auth api url
 pub const ICARUS_AUTH_BASE_API_URL: &str = "ICARUS_AUTH_BASE_API_URL";
 
+/// Environment key for App status
+pub const APP_ENV: &str = "APP_ENV";
+/// Environment key for backend port. Used for both auth and core functionality
+pub const BACKEND_PORT: &str = "BACKEND_PORT";
+/// Environment key for frontend url
+pub const FRONTEND_URL: &str = "FRONTEND_URL";
+/// Environment key for application logging
+pub const RUST_LOG: &str = "RUST_LOG";
+/// Environment key for allowed origins for CORS support
+pub const ALLOWED_ORIGINS: &str = "ALLOWED_ORIGINS";
+
 pub mod error {
     use const_format::concatcp;
 
@@ -33,4 +44,9 @@ pub mod error {
     pub const ICARUS_BASE_API_URL: &str = concatcp!(super::ICARUS_BASE_API_URL, " ", GENERAL_ERROR);
     pub const ICARUS_AUTH_BASE_API_URL: &str =
         concatcp!(super::ICARUS_AUTH_BASE_API_URL, " ", GENERAL_ERROR);
+    pub const APP_ENV: &str = concatcp!(super::APP_ENV, " ", GENERAL_ERROR);
+    pub const BACKEND_PORT: &str = concatcp!(super::BACKEND_PORT, " ", GENERAL_ERROR);
+    pub const FRONTEND_URL: &str = concatcp!(super::FRONTEND_URL, " ", GENERAL_ERROR);
+    pub const RUST_LOG: &str = concatcp!(super::RUST_LOG, " ", GENERAL_ERROR);
+    pub const ALLOWED_ORIGINS: &str = concatcp!(super::ALLOWED_ORIGINS, " ", GENERAL_ERROR);
 }
