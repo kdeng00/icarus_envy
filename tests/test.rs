@@ -62,7 +62,16 @@ mod tests {
 
     #[test]
     fn test_get_env() {
-        let keys = vec![("RANDOM_ENV_KEY", "YouDon'tWantToButYouGottaChange|It'sGoingToHurtYouTryingToStayTheSame|AreYouInItOrYouInItForTheFame?|I'mTryingToFigureOutWhoLoveMeForMe"), ("MODNAR_ENV_KEY", "FeelingTheMonsterClimbDeepserInsideOfMe|FeelingHimGnawingMyHeartAwayHungrily|I'llNeverLoseThisPain|NeverDreamOfYouAgain")];
+        let keys = vec![
+            (
+                "RANDOM_ENV_KEY",
+                "YouDon'tWantToButYouGottaChange|It'sGoingToHurtYouTryingToStayTheSame|AreYouInItOrYouInItForTheFame?|I'mTryingToFigureOutWhoLoveMeForMe",
+            ),
+            (
+                "MODNAR_ENV_KEY",
+                "FeelingTheMonsterClimbDeepserInsideOfMe|FeelingHimGnawingMyHeartAwayHungrily|I'llNeverLoseThisPain|NeverDreamOfYouAgain",
+            ),
+        ];
 
         for (key, value) in keys.iter() {
             let result = async_std::task::block_on(icarus_envy::environment::get_env(key));
