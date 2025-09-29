@@ -61,6 +61,63 @@ mod tests {
     }
 
     #[test]
+    fn test_get_app_env() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_app_env());
+        assert_eq!(
+            result,
+            "development",
+            "{} does not match {:?}",
+            icarus_envy::keys::APP_ENV,
+            result
+        )
+    }
+
+    #[test]
+    fn test_get_backend_port() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_backend_port());
+        assert_eq!(
+            result,
+            "8001",
+            "{} does not match {:?}",
+            icarus_envy::keys::BACKEND_PORT,
+            result
+        )
+    }
+    #[test]
+    fn test_get_frontend_url() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_frontend_url());
+        assert_eq!(
+            result,
+            "http://localhost:4200",
+            "{} does not match {:?}",
+            icarus_envy::keys::FRONTEND_URL,
+            result
+        )
+    }
+    #[test]
+    fn test_get_rust_log() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_rust_log());
+        assert_eq!(
+            result,
+            "debug",
+            "{} does not match {:?}",
+            icarus_envy::keys::RUST_LOG,
+            result
+        )
+    }
+    #[test]
+    fn test_get_allowed_origins() {
+        let result = async_std::task::block_on(icarus_envy::environment::get_allowed_origins());
+        assert_eq!(
+            result,
+            "https://soaricarus.com,https://www.soaricarus.com",
+            "{} does not match {:?}",
+            icarus_envy::keys::ALLOWED_ORIGINS,
+            result
+        )
+    }
+
+    #[test]
     fn test_get_env() {
         let keys = vec![
             (

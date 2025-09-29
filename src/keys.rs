@@ -1,24 +1,24 @@
-// Environment key for Database management
+/// Environment key for Database management
 pub const DB_URL: &str = "DATABASE_URL";
 
-// Environment key for secret main key
-// Used for the icarus app
+/// Environment key for secret main key
+/// Used for the icarus app
 pub const SECRET_MAIN_KEY: &str = "SECRET_MAIN_KEY";
 
-// Environment key for service logins
+/// Environment key for service logins
 pub const SERVICE_PASSPHRASE: &str = "SERVICE_PASSPHRASE";
 
-// Environment key for secret key
-// Generic use of secret key that could be found in various apps
+/// Environment key for secret key
+/// Generic use of secret key that could be found in various apps
 pub const SECRET_KEY: &str = "SECRET_KEY";
 
-// Environment key for root directory for the icarus app
+/// Environment key for root directory for the icarus app
 pub const ROOT_DIRECTORY: &str = "ROOT_DIRECTORY";
 
-// Environment key for icarus api url
+/// Environment key for icarus api url
 pub const ICARUS_BASE_API_URL: &str = "ICARUS_BASE_API_URL";
 
-// Environment key for icarus auth api url
+/// Environment key for icarus auth api url
 pub const ICARUS_AUTH_BASE_API_URL: &str = "ICARUS_AUTH_BASE_API_URL";
 
 /// Environment key for App status
