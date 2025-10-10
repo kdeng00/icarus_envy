@@ -7,7 +7,7 @@ pub struct EnvVar {
     pub key: String,
     pub value: String,
     pub has_delimiter: bool,
-    pub delimiter: char
+    pub delimiter: char,
 }
 
 pub fn init_envvar(key: &str, value: &str) -> EnvVar {
