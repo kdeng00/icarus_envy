@@ -132,7 +132,11 @@ mod tests {
 
         for (key, value) in keys.iter() {
             let result = async_std::task::block_on(icarus_envy::environment::get_env(key));
-            assert_eq!(result.value, *value, "{:?} does not match {:?}", key, result)
+            assert_eq!(
+                result.value, *value,
+                "{:?} does not match {:?}",
+                key, result
+            )
         }
     }
 }
