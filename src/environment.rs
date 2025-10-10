@@ -99,7 +99,6 @@ pub async fn get_allowed_origins() -> crate::EnvVar {
 /// Get environment not specified in the code
 pub async fn get_env(environment: &str) -> crate::EnvVar {
     dotenvy::dotenv().ok();
-    // let key = crate::keys::
     let my_error = format!("{environment} {}", crate::keys::error::GENERAL_ERROR);
     let value = std::env::var(environment).expect(&my_error);
 
