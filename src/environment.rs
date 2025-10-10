@@ -49,8 +49,7 @@ pub async fn get_icarus_base_api_url() -> crate::EnvVar {
 pub async fn get_icarus_auth_base_api_url() -> crate::EnvVar {
     dotenvy::dotenv().ok();
     let key = crate::keys::ICARUS_AUTH_BASE_API_URL;
-    let value = std::env::var(key)
-        .expect(key);
+    let value = std::env::var(key).expect(key);
 
     crate::init_envvar(key, &value)
 }
