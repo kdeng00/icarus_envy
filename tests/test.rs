@@ -4,7 +4,7 @@ mod tests {
     fn test_dburl() {
         let result = async_std::task::block_on(icarus_envy::environment::get_db_url());
         assert_eq!(
-            result, "postgres://myuser:password@localhost:5432/my_db",
+            result.value, "postgres://myuser:password@localhost:5432/my_db",
             "DATABASE_URL does not match {:?}",
             result
         );
@@ -14,7 +14,7 @@ mod tests {
     fn test_get_secret_main_key() {
         let result = async_std::task::block_on(icarus_envy::environment::get_secret_main_key());
         assert_eq!(
-            result, "Somesupersecretpassword!!!45345435",
+            result.value, "Somesupersecretpassword!!!45345435",
             "SECRET_MAIN_KEY does not match {:?}",
             result
         )
@@ -24,7 +24,7 @@ mod tests {
     fn test_get_service_passphrase() {
         let result = async_std::task::block_on(icarus_envy::environment::get_service_passphrase());
         assert_eq!(
-            result, "T5OCHDHadAtuOWIqRAS7u8XHDDkzKT1Uvvw7mGMkNzKjVdlHA8xGdILf2adDHspO",
+            result.value, "T5OCHDHadAtuOWIqRAS7u8XHDDkzKT1Uvvw7mGMkNzKjVdlHA8xGdILf2adDHspO",
             "SERVICE_PASSPHRASE does not match {:?}",
             result
         )
@@ -34,7 +34,7 @@ mod tests {
     fn test_get_secret_key() {
         let result = async_std::task::block_on(icarus_envy::environment::get_secret_key());
         assert_eq!(
-            result, "AmIGoodEnoughForYou?",
+            result.value, "AmIGoodEnoughForYou?",
             "SECRET_KEY does not match {:?}",
             result
         )
@@ -44,7 +44,7 @@ mod tests {
     fn test_get_root_directory() {
         let result = async_std::task::block_on(icarus_envy::environment::get_root_directory());
         assert_eq!(
-            result, "/path/to/root",
+            result.value, "/path/to/root",
             "ROOT_DIRECTORY does not match {:?}",
             result
         )
@@ -54,7 +54,7 @@ mod tests {
     fn test_get_icarus_base_api_url() {
         let result = async_std::task::block_on(icarus_envy::environment::get_icarus_base_api_url());
         assert_eq!(
-            result, "https://icarus.com",
+            result.value, "https://icarus.com",
             "ICARUS_BASE_API_URL does not match {:?}",
             result
         )
@@ -64,7 +64,7 @@ mod tests {
     fn test_get_app_env() {
         let result = async_std::task::block_on(icarus_envy::environment::get_app_env());
         assert_eq!(
-            result,
+            result.value,
             "development",
             "{} does not match {:?}",
             icarus_envy::keys::APP_ENV,
@@ -76,7 +76,7 @@ mod tests {
     fn test_get_backend_port() {
         let result = async_std::task::block_on(icarus_envy::environment::get_backend_port());
         assert_eq!(
-            result,
+            result.value,
             "8001",
             "{} does not match {:?}",
             icarus_envy::keys::BACKEND_PORT,
@@ -87,7 +87,7 @@ mod tests {
     fn test_get_frontend_url() {
         let result = async_std::task::block_on(icarus_envy::environment::get_frontend_url());
         assert_eq!(
-            result,
+            result.value,
             "http://localhost:4200",
             "{} does not match {:?}",
             icarus_envy::keys::FRONTEND_URL,
@@ -98,7 +98,7 @@ mod tests {
     fn test_get_rust_log() {
         let result = async_std::task::block_on(icarus_envy::environment::get_rust_log());
         assert_eq!(
-            result,
+            result.value,
             "debug",
             "{} does not match {:?}",
             icarus_envy::keys::RUST_LOG,
@@ -109,7 +109,7 @@ mod tests {
     fn test_get_allowed_origins() {
         let result = async_std::task::block_on(icarus_envy::environment::get_allowed_origins());
         assert_eq!(
-            result,
+            result.value,
             "https://soaricarus.com,https://www.soaricarus.com",
             "{} does not match {:?}",
             icarus_envy::keys::ALLOWED_ORIGINS,
@@ -132,7 +132,7 @@ mod tests {
 
         for (key, value) in keys.iter() {
             let result = async_std::task::block_on(icarus_envy::environment::get_env(key));
-            assert_eq!(result, *value, "{:?} does not match {:?}", key, result)
+            assert_eq!(result.value, *value, "{:?} does not match {:?}", key, result)
         }
     }
 }
