@@ -114,7 +114,28 @@ mod tests {
             "{} does not match {:?}",
             icarus_envy::keys::ALLOWED_ORIGINS,
             result
-        )
+        );
+
+        assert_eq!(
+            result.has_delimiter, true,
+            "The {} variable has an issue finding the delimiter",
+            result.key
+        );
+
+        match icarus_envy::utility::delimitize(&result) {
+            Ok(allowed_origins) => {
+                assert_eq!(
+                    allowed_origins.len(),
+                    2,
+                    "The amount of allowed origins does not match. {} {}",
+                    allowed_origins.len(),
+                    2
+                )
+            }
+            Err(err) => {
+                assert!(false, "Error: {:?}", err)
+            }
+        }
     }
 
     #[test]
