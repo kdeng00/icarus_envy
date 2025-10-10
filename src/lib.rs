@@ -28,11 +28,7 @@ pub fn init_delimiter(envvar: &mut EnvVar, delimiter: char) {
         }
     }
 
-    let has_delimiter = if amount_of_delimiters_found >= 1 {
-        true
-    } else {
-        false
-    };
+    let has_delimiter = amount_of_delimiters_found >= 1;
 
     if has_delimiter {
         envvar.has_delimiter = has_delimiter;
