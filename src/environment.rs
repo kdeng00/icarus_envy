@@ -90,7 +90,10 @@ pub async fn get_allowed_origins() -> crate::EnvVar {
     let key = crate::keys::ALLOWED_ORIGINS;
     let value = std::env::var(key).expect(key);
 
-    crate::init_envvar(key, &value)
+    let mut envvar = crate::init_envvar(key, &value);
+    crate::init_delimiter(&mut envvar, ',');
+
+    envvar
 }
 
 /// Get environment not specified in the code

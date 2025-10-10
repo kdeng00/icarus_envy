@@ -114,7 +114,9 @@ mod tests {
             "{} does not match {:?}",
             icarus_envy::keys::ALLOWED_ORIGINS,
             result
-        )
+        );
+
+        assert_eq!(result.has_delimiter, true, "The {} variable has an issue finding the delimiter", result.key)
     }
 
     #[test]
