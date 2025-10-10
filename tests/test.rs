@@ -118,7 +118,7 @@ mod tests {
 
         assert_eq!(result.has_delimiter, true, "The {} variable has an issue finding the delimiter", result.key);
 
-        match icarus_envy::utility::split_words(&result) {
+        match icarus_envy::utility::delimitize(&result) {
             Ok(allowed_origins) => {
                 assert_eq!(allowed_origins.len(), 2, "The amount of allowed origins does not match. {} {}", allowed_origins.len(), 2)
             }
