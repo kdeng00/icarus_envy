@@ -1,0 +1,7 @@
+pub fn split_words(var: &crate::EnvVar) -> Result<Vec<String>, std::io::Error> {
+    if var.has_delimiter {
+        Ok(var.value.split(var.delimiter).map(|c| c.parse::<String>().unwrap()).collect())
+    } else {
+        Err(std::io::Error::other("Environment variable does not have a delimiter"))
+    }
+}
