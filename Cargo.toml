@@ -2,7 +2,7 @@
 name = "icarus_envy"
 version = "0.4.2"
 edition = "2024"
-rust-version = "1.88"
+rust-version = "1.90"
 
 [dependencies]
 dotenvy = { version = "0.15.7" }
