@@ -1,12 +1,12 @@
 [package]
 name = "icarus_envy"
-version = "0.4.1"
+version = "0.4.2"
 edition = "2024"
 rust-version = "1.88"
 
 [dependencies]
 dotenvy = { version = "0.15.7" }
-const_format = { version = "0.2.34" }
+const_format = { version = "0.2.35" }
 
 [dev-dependencies]
-async-std = { version = "1.13.1" }
+async-std = { version = "1.13.2" }
